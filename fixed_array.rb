@@ -1,16 +1,20 @@
 class FixedArray
-  attr_accessor :size
+  attr_accessor :size, :array
 
   def initialize(size)
     @size = size
     @array = Array.new(size)
   end
 
-  def get(index)
-    #OutOfBoundsException if user tries to get a value at an index outside the bounds of the fixed array
+  def set(index, element)
+    if @array.size < (index + 1)
+      return "Index is out of bounds!"
+    else
+      @array[index] = element 
+    end
   end
 
-  def set(index,element)
-    #OutOfBoundsException if user tries to set a value at an index outside the bounds of the fixed array
+  def get(index)
+    #OutOfBoundsException if user tries to get a value at an index outside the bounds of the fixed array
   end
 end
