@@ -16,10 +16,19 @@ describe FixedArray do
 
     it "sets the value of at the given index to the given element parameter" do
       array.set(2, "X")
-      expect(array.array[2]).to eq "X"
+      expect(array.array).to eq [nil, nil, "X", nil]
     end
-    
   end
 
+  describe "get" do
+    it "raises an error if index is out of bounds" do
+      expect(array.get(9)).to eq "Index is out of bounds!"
+    end
+
+    it "gets the value at the given index" do
+      array.set(2, "Z")
+      expect(array.get(2)).to eq "Z"
+    end
+  end
 
 end

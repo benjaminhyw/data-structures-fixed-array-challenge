@@ -15,6 +15,10 @@ class FixedArray
   end
 
   def get(index)
-    #OutOfBoundsException if user tries to get a value at an index outside the bounds of the fixed array
+    if @array.size < (index + 1)
+      return "Index is out of bounds!"
+    else
+      @array[index]
+    end
   end
 end
